@@ -1,6 +1,9 @@
+package main
+
 import (
         "context"
-        "net"
+	"log"
+	"time"
 
 // (1) import grpc module
         "google.golang.org/grpc"
@@ -21,13 +24,11 @@ func main(){
 // (4) using (3)channel, create clientStub
 	client := helloGrpc.NewMyServiceClient(conn)
 
-// (5)ãmake msg to send remote func using protoc defined msg type
 	request := &helloGrpc.MyNumber{Value: 4}
 
-// (6) remote function call using clientStub
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
-	
+
 	response, err := client.MyFunction(ctx, request)
 	if err != nil{
 		log.Fatalf("could not call MyFunction: %v", err)
