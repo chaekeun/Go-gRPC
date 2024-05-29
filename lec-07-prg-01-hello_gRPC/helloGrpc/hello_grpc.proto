@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option go_package = "github.com/chaekeun/Go-gRPC/lec-07-prg-01-hello_gRPC/helloGrpc";
+
+package helloGrpc;
+
+service MyService {
+        rpc MyFunction(MyNumber) returns (MyNumber){}
+}
+
+message MyNumber{
+        int32 value = 1;
+}
+
