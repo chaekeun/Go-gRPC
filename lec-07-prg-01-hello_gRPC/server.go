@@ -6,10 +6,10 @@ import (
 	"net"
 
 	"google.golang.org/grpc"
-	"helloGrpc"
+	helloGrpc "github.com/chaekeun/Go-gRPC/lec-07-prg-01-hello_gRPC/helloGrpc"
 
 // (3) original remotely called functions
-	"hello_grpc"
+//	"hello_grpc"
 )
 
 
