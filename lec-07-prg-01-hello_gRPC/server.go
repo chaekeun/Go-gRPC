@@ -10,7 +10,7 @@ import (
 	pb "github.com/chaekeun/Go-gRPC/lec-07-prg-01-hello_gRPC/helloGrpc"
 
 // (3) original remotely called functions
-//	hello_grpc "github.com/chaekeun/Go-gRPC/lec-07-prg-01-hello_gRPC/helloGrpc/hello_grpc"
+//	hello_grpc "github.com/chaekeun/Go-gRPC/lec-07-prg-01-hello_gRPC/helloGrpc/hello_grpc.go"
 )
 
 
@@ -20,8 +20,13 @@ type myServiceServer struct {
 }
 
 // (5) remote call rpc func
+	// (5.0)
+func myFunc(inputNumber int32) int32{
+	return inputNumber*inputNumber
+}
+
 	// (5.1) user defined rpc function MyFunction
-func (s *myServiceServer) MyFunction(ctx context.Context, req *pb.Mynumber) (*pb.MyNumber, error){
+func (s *myServiceServer) MyFunction(ctx context.Context, req *pb.MyNumber) (*pb.MyNumber, error){
 	// (5.2) user defined msg class
 	res := &pb.MyNumber{
 		// (5.3) pass input param to user defined rpc function and save return value
