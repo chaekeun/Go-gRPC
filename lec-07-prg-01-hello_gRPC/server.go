@@ -10,7 +10,7 @@ import (
 	helloGrpc "github.com/chaekeun/Go-gRPC/lec-07-prg-01-hello_gRPC/helloGrpc"
 
 // (3) original remotely called functions
-	hello_grpc "github.com/chaekeun/Go-gRPC/lec-07-prg-01-hello_gRPC/helloGrpc/hello_grpc"
+//	hello_grpc "github.com/chaekeun/Go-gRPC/lec-07-prg-01-hello_gRPC/helloGrpc/hello_grpc"
 )
 
 
@@ -25,7 +25,7 @@ func (s *myServiceServer) MyFunction(ctx context.Context, req *helloGrpc.Mynumbe
 	// (5.2) user defined msg class
 	res := &helloGrpc.MyNumber{
 		// (5.3) pass input param to user defined rpc function and save return value
-		Value: hello_grpc.myFunc(req.GetValue()),
+		Value: helloGrpc.myFunc(req.GetValue()),
 	}
 	return res, nil
 }
