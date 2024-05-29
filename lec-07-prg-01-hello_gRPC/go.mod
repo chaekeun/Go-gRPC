@@ -1,4 +1,4 @@
-module github.com/chaekeun/Go-gRPC
+module github.com/chaekeun/Go-gRPC/lec-07-prg-01-hello_gRPC
 
 go 1.22.3
 

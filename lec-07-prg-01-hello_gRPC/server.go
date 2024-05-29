@@ -3,13 +3,14 @@ package main
 // (2) import protoc struct
 import (
 	"context"
+	"log"
 	"net"
 
 	"google.golang.org/grpc"
 	helloGrpc "github.com/chaekeun/Go-gRPC/lec-07-prg-01-hello_gRPC/helloGrpc"
 
 // (3) original remotely called functions
-//	"hello_grpc"
+	hello_grpc "github.com/chaekeun/Go-gRPC/lec-07-prg-01-hello_gRPC/helloGrpc/hello_grpc"
 )
 
 
@@ -20,11 +21,11 @@ type myServiceServer struct {
 
 // (5) remote call rpc func
 	// (5.1) user defined rpc function MyFunction
-func (s *myServiceServer) MyFunction(ctx context.Context, req *helloGrpc.Mynumber, error){
+func (s *myServiceServer) MyFunction(ctx context.Context, req *helloGrpc.Mynumber) (*helloGrpc.MyNumber, error){
 	// (5.2) user defined msg class
 	res := &helloGrpc.MyNumber{
 		// (5.3) pass input param to user defined rpc function and save return value
-		Value: myFunc(req.GetValue()),
+		Value: hello_grpc.myFunc(req.GetValue()),
 	}
 	return res, nil
 }
