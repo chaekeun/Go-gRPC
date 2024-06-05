@@ -7,7 +7,7 @@ import(
 	"time"
 
 	"google.golang.org/grpc"
-	pb "github.com/chaekeun/Go-gRPC/lec-07-prg-02-bidirectional-streaming"
+	pb "github.com/chaekeun/Go-gRPC/lec-07-prg-02-bidirectional-streaming/bidirectional"
 )
 
 func makeMessage(message string) *pb.Message {

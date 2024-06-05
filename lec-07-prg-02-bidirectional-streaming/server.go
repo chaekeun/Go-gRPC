@@ -8,7 +8,7 @@ import (
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/peer"
-	pb "github.com/chaekeun/Go-gRPC/lec-07-prg-02-bidirectional-streaming"
+	pb "github.com/chaekeun/Go-gRPC/lec-07-prg-02-bidirectional-streaming/bidirectional"
 )
 
 // go use struct to implent gRPC service.
@@ -40,7 +40,7 @@ func serve(){
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
-	
+
 	//make new grpc server
 	server := grpc.NewServer()
 

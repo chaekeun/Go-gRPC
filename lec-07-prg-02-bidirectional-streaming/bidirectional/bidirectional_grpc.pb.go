@@ -4,7 +4,7 @@
 // - protoc             v3.21.12
 // source: bidirectional.proto
 
-package helloGrpc
+package bidirectional
 
 import (
 	context "context"
