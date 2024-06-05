@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net"
-	"sync"
+	// "sync"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/peer"
@@ -12,7 +12,7 @@ import (
 )
 
 // go use struct to implent gRPC service.
-type BidrectionalService struct{
+type BidirectionalService struct{
 	// embed default method
 	pb.UnimplementedBidirectionalServer
 }
@@ -26,7 +26,7 @@ func (s *BidirectionalService) GetServerResponse(stream pb.Bidirectional_GetServ
 			return err
 		}
 		p, _ := peer.FromContext(stream.Context())
-		fmt.Printf("Received message from %v: %s\n", p.Addr, meesage.Message)
+		fmt.Printf("Received message from %v: %s\n", p.Addr, message.Message)
 		if err  := stream.Send(message); err != nil{
 			return err
 		}
