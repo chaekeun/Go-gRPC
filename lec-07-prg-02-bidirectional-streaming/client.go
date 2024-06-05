@@ -1,12 +1,13 @@
 package main
 
 import(
-	
 	"context"
+	"fmt"
+	"log"
+	"time"
 
 	"google.golang.org/grpc"
-	// path수정필요
-	pb "path/to/your/proto"
+	pb "github.com/chaekeun/Go-gRPC/lec-07-prg-02-bidirectional-streaming"
 )
 
 func makeMessage(message string) *pb.Message {

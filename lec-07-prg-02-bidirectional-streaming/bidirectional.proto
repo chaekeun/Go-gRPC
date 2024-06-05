@@ -2,6 +2,8 @@ syntax="proto3";
 
 package bidirectional;
 
+option go_package = "github.com/chaekeun/Go-gRPC/lec-07-prg-01-hello_gRPC/helloGrpc";
+
 service Bidirectional{
 	// A Bidirectional streaming RPC.
 	//	
